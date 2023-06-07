@@ -1,0 +1,15 @@
+.hr {
+  border: 0px;
+  padding: 0px;
+  position: relative;
+  width: 100%;
+}
+.hr::before {
+  height: 8rem;
+  border-left: 1px solid rgba(61, 61, 61, 0.12);
+  width: 1px;
+  content: '';
+  display: inline-block;
+  max-width: 100%;
+  vertical-align: middle;
+}
