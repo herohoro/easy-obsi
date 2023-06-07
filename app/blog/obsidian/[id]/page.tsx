@@ -4,6 +4,7 @@ type PostData = {
   title: string
   id: string
   date: string
+  contentHtml: string
 }
 
 type PostProps = {
@@ -31,6 +32,8 @@ const Post: NextPage<PostProps> = ({ postData }) => {
       {postData.id}
       <br />
       {postData.date}
+      <br />
+      <div dangerouslySetInnerHTML={{ __html: postData.contentHtml }} />
     </>
   )
 }
