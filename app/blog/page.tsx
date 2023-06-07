@@ -3,27 +3,27 @@ import {
   NEXT_PUBLIC_URL,
   NEXT_PUBLIC_SITE_TITLE,
   NEXT_PUBLIC_SITE_DESCRIPTION,
-  NUMBER_OF_POSTS_PER_PAGE,
+  // NUMBER_OF_POSTS_PER_PAGE,
 } from '../server-constants'
 import GoogleAnalytics from '../../components/google-analytics'
 import {
-  BlogPostLink,
-  BlogTagLink,
-  NextPageLink,
+  // BlogPostLink,
+  // BlogTagLink,
+  // NextPageLink,
   NoContents,
-  PostDate,
-  PostExcerpt,
-  PostTags,
-  PostTitle,
-  ReadMoreLink,
+  // PostDate,
+  // PostExcerpt,
+  // PostTags,
+  // PostTitle,
+  // ReadMoreLink,
 } from '../../components/blog-parts'
 import styles from '../../styles/blog.module.css'
-import {
-  getPosts,
-  getFirstPost,
-  getRankedPosts,
-  getAllTags,
-} from '../../lib/notion/client'
+// import {
+//   getPosts,
+//   getFirstPost,
+//   getRankedPosts,
+//   getAllTags,
+// } from '../../lib/notion/client'
 import { getSortedPostsData } from '../../lib/obsidian/post'
 import Link from 'next/link'
 import obStyles from '../../styles/obsidian/blog.module.css'
@@ -69,12 +69,12 @@ async function getAllPostsData() {
 }
 
 const BlogPage = async () => {
-  const [posts, firstPost, rankedPosts, tags] = await Promise.all([
-    getPosts(NUMBER_OF_POSTS_PER_PAGE),
-    getFirstPost(),
-    getRankedPosts(),
-    getAllTags(),
-  ])
+  // const [posts, firstPost, rankedPosts, tags] = await Promise.all([
+  //   getPosts(NUMBER_OF_POSTS_PER_PAGE),
+  //   getFirstPost(),
+  //   getRankedPosts(),
+  //   getAllTags(),
+  // ])
   const allPostsData = await getAllPostsData()
 
   return (
@@ -97,9 +97,9 @@ const BlogPage = async () => {
             </ul>
             <div className={obStyles.hr}></div>
           </div>
-          <NoContents contents={posts} />
+          {/* <NoContents contents={posts} /> */}
 
-          {posts.map((post) => {
+          {/* {posts.map((post) => {
             return (
               <div className={styles.post} key={post.Slug}>
                 <PostDate post={post} />
@@ -109,16 +109,17 @@ const BlogPage = async () => {
                 <ReadMoreLink post={post} />
               </div>
             )
-          })}
+          })} */}
 
           <footer>
-            <NextPageLink firstPost={firstPost} posts={posts} />
+            {/* <NextPageLink firstPost={firstPost} posts={posts} /> */}
           </footer>
         </div>
 
         <div className={styles.subContent}>
-          <BlogPostLink heading="Recommended" posts={rankedPosts} />
-          <BlogTagLink heading="Categories" tags={tags} />
+          <p>note数が増えたらコンポネント作る予定</p>
+          {/* <BlogPostLink heading="Recommended" posts={rankedPosts} />
+          <BlogTagLink heading="Categories" tags={tags} /> */}
         </div>
       </div>
     </>

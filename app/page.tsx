@@ -3,7 +3,7 @@ import Link from 'next/link'
 import {
   NEXT_PUBLIC_URL,
   NEXT_PUBLIC_SITE_TITLE,
-  NEXT_PUBLIC_SITE_DESCRIPTION
+  NEXT_PUBLIC_SITE_DESCRIPTION,
 } from './server-constants'
 import GoogleAnalytics from '../components/google-analytics'
 import styles from '../styles/page.module.css'
@@ -12,7 +12,9 @@ export async function generateMetadata(): Promise<Metadata> {
   const title = NEXT_PUBLIC_SITE_TITLE
   const description = NEXT_PUBLIC_SITE_DESCRIPTION
   const url = NEXT_PUBLIC_URL ? new URL(NEXT_PUBLIC_URL) : undefined
-  const images = NEXT_PUBLIC_URL ? [{ url: new URL('/default.png', NEXT_PUBLIC_URL) }] : []
+  const images = NEXT_PUBLIC_URL
+    ? [{ url: new URL('/default.png', NEXT_PUBLIC_URL) }]
+    : []
 
   const metadata: Metadata = {
     openGraph: {
@@ -43,12 +45,12 @@ const RootPage = () => (
     <div className={styles.container}>
       <div>
         <h2>Welcome!</h2>
-        <p>Your easy-notion-blog deployed successfully!</p>
+        <p>Your easy-obsidian-memo deployed successfully!</p>
         <p>Have fun!</p>
         <p>
-          easy-notion-blog powered by{' '}
-          <Link href="https://github.com/otoyo/easy-notion-blog">
-            otoyo/easy-notion-blog
+          easy-obsidian-blog powered by{' '}
+          <Link href="https://github.com/herohoro/easy-obsidian-memo">
+            herohoro/easy-obsidian-memo
           </Link>
         </p>
       </div>
