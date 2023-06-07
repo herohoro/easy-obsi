@@ -2,9 +2,19 @@ import fs from 'fs'
 import path from 'path'
 import matter from 'gray-matter'
 
+type PostData = {
+  title: string
+  id: string
+  date: string
+}
+
+type PostProps = {
+  postData: PostData
+}
+
 const postsDirectory = path.join(process.cwd(), 'lib', 'obsidian', 'posts')
 
-export function getSortedPostsData() {
+export function getSortedPostsData(): PostData[] {
   // Get file names under /posts
   const fileNames = fs.readdirSync(postsDirectory)
   const allPostsData = fileNames.map((fileName) => {
@@ -22,7 +32,7 @@ export function getSortedPostsData() {
     return {
       id,
       ...matterResult.data,
-    }
+    } as PostData
   })
   // Sort posts by date
   return allPostsData.sort(({ date: a }, { date: b }) => {
@@ -34,4 +44,29 @@ export function getSortedPostsData() {
       return 0
     }
   })
+}
+
+export function getAllPostIds() {
+  const fileNames = fs.readdirSync(postsDirectory)
+
+  return fileNames.map((fileName) => {
+    return {
+      params: {
+        id: fileName.replace(/\.md$/, ''),
+      },
+    }
+  })
+}
+export function getPostData(id: string): PostData {
+  const fullPath = path.join(postsDirectory, `${id}.md`)
+  const fileContents = fs.readFileSync(fullPath, 'utf8')
+
+  // Use gray-matter to parse the post metadata section
+  const matterResult = matter(fileContents)
+
+  // Combine the data with the id
+  return {
+    id,
+    ...matterResult.data,
+  } as PostData
 }
