@@ -1,12 +1,5 @@
 # easy-obsidian-memo
 
-日本語  
-
-  
-
-# easy-notion-blog
-
-  
 
 [![GitHub stars](https://img.shields.io/github/stars/otoyo/easy-notion-blog)](https://github.com/herohoro/easy-obsidian-memo/stargazers)
 
