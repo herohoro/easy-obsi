@@ -26,6 +26,7 @@ import {
 } from '../../lib/notion/client'
 import { getSortedPostsData } from '../../lib/obsidian/post'
 import Link from 'next/link'
+import obStyles from '../../styles/obsidian/blog.module.css'
 
 export const revalidate = 60
 
@@ -81,8 +82,8 @@ const BlogPage = async () => {
       <GoogleAnalytics pageTitle="Blog" />
       <div className={styles.container}>
         <div className={styles.mainContent}>
-          <section>
-            <h2>Blog</h2>
+          <div className={styles.post}>
+            <h3>from:Obsidian</h3>
             <ul>
               {allPostsData.map(({ id, date, title }) => (
                 <li key={id}>
@@ -94,7 +95,8 @@ const BlogPage = async () => {
                 </li>
               ))}
             </ul>
-          </section>
+            <div className={obStyles.hr}></div>
+          </div>
           <NoContents contents={posts} />
 
           {posts.map((post) => {
