@@ -1,9 +1,9 @@
 # easy-obsidian-memo
 
 
-[![GitHub stars](https://img.shields.io/github/stars/otoyo/easy-notion-blog)](https://github.com/herohoro/easy-obsidian-memo/stargazers)
+[![GitHub stars](https://img.shields.io/github/stars/herohoro/easy-obsidian-memo)](https://github.com/herohoro/easy-obsidian-memo/stargazers)
 
-[![GitHub license](https://img.shields.io/github/license/otoyo/easy-notion-blog)](https://github.com/herohoro/easy-obsidian-memo/blob/master/LICENSE)
+[![GitHub license](https://img.shields.io/github/license/herohoro/easy-obsidian-memo)](https://github.com/herohoro/easy-obsidian-memo/blob/master/LICENSE)
 
   
 
