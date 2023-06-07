@@ -26,10 +26,10 @@ easy-notion-blogの **【魔改造版】**
 - :white_check_mark: **~~Notion 公式API~~ Obsidian プラグイン**を使っているので~~安心~~ 簡単なコードで実現
 
 
-オリジナルで改造するために参考になるeasy-notion-blogのコードを残しています。
+オリジナルで改造するために参考になるeasy-notion-blogのコードを残しています。  
 改造する上で参考になる記述が沢山あるので、のぞいてみてください⭐
 
-[easy愛好家が集まってこっそり開発継続中のeasy-notion-blog](https://github.com/herohoro/zutto2_easy-notion-blog)
+[easy愛好家が集まってこっそり開発継続中のeasy-notion-blog](https://github.com/herohoro/zutto2_easy-notion-blog)  
 ※ 元々開発されていたotoyoさんは[astro-notion-blog](https://github.com/otoyo/astro-notion-blog)の開発に専念しています  
 
 
@@ -147,7 +147,7 @@ yarn dev
 
 1. Obsidianで「Obsidian Git」プラグインをインストールする
 2. Obsidianで新たなVaultを作ります
-3. Vault nameを==posts==にします
+3. Vault nameをpostsにします
 4. LocationはSTEP01で使っていたeasy-obsidian-memo内にあるlib>obsidianにします
 5. Obsidian上でObsidian Gitを有効にする
 
