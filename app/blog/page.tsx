@@ -25,6 +25,7 @@ import {
   getAllTags,
 } from '../../lib/notion/client'
 import { getSortedPostsData } from '../../lib/obsidian/post'
+import Link from 'next/link'
 
 export const revalidate = 60
 
@@ -85,11 +86,11 @@ const BlogPage = async () => {
             <ul>
               {allPostsData.map(({ id, date, title }) => (
                 <li key={id}>
-                  {title}
-                  <br />
-                  {id}
-                  <br />
                   {date}
+                  <br />
+                  <h3>
+                    <Link href={`/blog/obsidian/${id}`}>{title}</Link>
+                  </h3>
                 </li>
               ))}
             </ul>
