@@ -24,6 +24,7 @@ import {
   getRankedPosts,
   getAllTags,
 } from '../../lib/notion/client'
+import { getSortedPostsData } from '../../lib/obsidian/post'
 
 export const revalidate = 60
 
@@ -59,6 +60,12 @@ export async function generateMetadata(): Promise<Metadata> {
   return metadata
 }
 
+async function getAllPostsData() {
+  const allPostsData = getSortedPostsData()
+
+  return allPostsData
+}
+
 const BlogPage = async () => {
   const [posts, firstPost, rankedPosts, tags] = await Promise.all([
     getPosts(NUMBER_OF_POSTS_PER_PAGE),
@@ -66,12 +73,27 @@ const BlogPage = async () => {
     getRankedPosts(),
     getAllTags(),
   ])
+  const allPostsData = await getAllPostsData()
 
   return (
     <>
       <GoogleAnalytics pageTitle="Blog" />
       <div className={styles.container}>
         <div className={styles.mainContent}>
+          <section>
+            <h2>Blog</h2>
+            <ul>
+              {allPostsData.map(({ id, date, title }) => (
+                <li key={id}>
+                  {title}
+                  <br />
+                  {id}
+                  <br />
+                  {date}
+                </li>
+              ))}
+            </ul>
+          </section>
           <NoContents contents={posts} />
 
           {posts.map((post) => {
