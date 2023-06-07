@@ -33,16 +33,20 @@ easy-notion-blogの **【魔改造版】**
 ※ 元々開発されていたotoyoさんは[astro-notion-blog](https://github.com/otoyo/astro-notion-blog)の開発に専念しています  
 
 
-
 ## スクリーンショット
 
   
 
 ### :camera_flash: ブログ側
 
-  
+
+![Screenshot 2023-06-07 at 19 11 05](https://github.com/herohoro/easy-obsidian-memo/assets/24947347/264c1800-5d43-4640-902d-a54041f4a5d5)
+
+![Screenshot 2023-06-07 at 13 24 08](https://github.com/herohoro/easy-obsidian-memo/assets/24947347/84c131a2-b9ed-47de-9778-df496453bcb8)
 
 
+
+ 
   
 
 ### :camera_flash: Notion側
